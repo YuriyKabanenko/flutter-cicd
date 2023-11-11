@@ -21,6 +21,6 @@ jobs:
       - name: Build in web
         run: flutter build web
   
-      - name: Run in web
-        run: flutter run -d chrome
+      - name: Run tests
+        run: flutter test
     
