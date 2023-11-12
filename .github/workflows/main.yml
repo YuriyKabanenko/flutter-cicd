@@ -1,4 +1,4 @@
-name: Flutter Pr
+name:  Widget tester
 
 on:
   workflow_dispatch:
@@ -17,9 +17,6 @@ jobs:
         
       - name: Install dependencies
         run: flutter pub get
-
-      - name: Build in web
-        run: flutter build web
   
       - name: Run tests
         run: flutter test
