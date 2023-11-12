@@ -2,6 +2,8 @@ name:  Widget tester
 
 on:
   pull_request:
+    types:
+      - opened
     branches: 
       - "masted"
 jobs:
