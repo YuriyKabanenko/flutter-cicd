@@ -10,20 +10,23 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter CICD',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
-    );
+        title: 'Flutter CICD',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        home: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Theme.of(context).primaryColor,
+            title: const Text("CI-CD"),
+          ),
+          body: const MyHomePage(),
+        ));
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -48,27 +51,17 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-          title: const Text("CI-CD"),
-        ),
-        body: GestureDetector(
-          onTap: () {
-            _changeText();
-          },
-          child: Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.max,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Text(
-                  (_text.isEmpty) ? 'Tap screen to show text' : _text,
-                  style: Theme.of(context).textTheme.headlineMedium,
-                ),
-              ],
-            ),
+    return SafeArea(
+      child: Center(
+        child: TextButton(
+          onPressed: _changeText,
+          child: Text(
+            textDirection: TextDirection.ltr,
+            (_text.isEmpty) ? 'Tap to change text' : _text,
+            style: Theme.of(context).textTheme.headlineMedium,
           ),
-        ));
+        ),
+      ),
+    );
   }
 }
