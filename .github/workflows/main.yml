@@ -5,7 +5,7 @@ on:
     types:
       - opened
     branches: 
-      - "masted"
+      - "master"
 jobs:
   build:
     runs-on: self-hosted
