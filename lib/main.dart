@@ -57,7 +57,7 @@ class _MyHomePageState extends State<MyHomePage> {
           onPressed: _changeText,
           child: Text(
             textDirection: TextDirection.ltr,
-            (_text.isEmpty) ? 'Tap to change text' : _text,
+            (_text.isEmpty) ? 'Tap to change THIS text' : _text,
             style: Theme.of(context).textTheme.headlineMedium,
           ),
         ),
