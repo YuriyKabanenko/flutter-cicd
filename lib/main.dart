@@ -33,7 +33,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final List<String> _wordList = ["HELLO", "WORLD", "HOW", "ARE", "YOU"];
+  final List<String> _wordList = ["HELLO", "WORLD", "HOW", "ARE"];
   String _text = "";
   int index = -1;
 
